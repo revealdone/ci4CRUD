@@ -26,22 +26,167 @@ body {
   background-size: cover;
   background-position: center;
 } */
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-header {
+.header {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #007bff; /* Sesuaikan warna sesuai kebutuhan */
+  padding: 15px 0;
+}
+
+.menu {
+  position: relative;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  display: block;
+  z-index: 20;
+}
+
+.hamburger-line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navbar Menu */
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  right: 15px;
+  background-color: transparent;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  width: 250px;
+  display: none; /* Hidden by default */
+}
+
+.nav-menu.hidden {
+  display: none;
+}
+
+.nav-menu.active {
+  display: block;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  margin-bottom: 10px;
+}
+
+.menu-list li:last-child {
+  margin-bottom: 0;
+}
+
+.menu-list a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 8px 0;
+}
+
+.menu-list a:hover {
+  color: #007bff; /* Sesuaikan warna sesuai kebutuhan */
+}
+
+/* Responsive */
+@media (min-width: 992px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    display: block;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    width: auto;
+  }
+
+  .menu-list {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .menu-list li {
+    margin: 0 10px;
+  }
+
+  .menu-list a {
+    padding: 0;
+  }
+}
+
+/* Navbar Fixed */
+.navbar-fixed {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 100px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
 
+/* header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-}
+} */
 
 .logo {
-  font-size: 2em;
+  font-size: 1em;
   color: aliceblue;
   user-select: none;
 }
